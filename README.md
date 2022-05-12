@@ -1,3 +1,10 @@
+# customer_configuration
+Part of demonstration of https://github.com/RedHatNordicsSA/controller_configuration
+
+* Contains modified roles from https://github.com/redhat-cop/controller_configuration which only allows customers to create, delete and modify items in their own organization.
+* Additional protection should be to use user which only has access to the customer organization
+
+
 # Red Hat Communities of Practice Controller Configuration Collection
 
 ![Ansible Lint](https://github.com/redhat-cop/controller_configuration/workflows/Ansible%20Lint/badge.svg)
