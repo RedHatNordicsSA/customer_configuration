@@ -3,7 +3,7 @@
 - name: Launch a Controller Workflow
   workflow_launch:
     name:                     "{{ __workflow_launch_item.name }}"
-    organization:             "{{ __workflow_launch_item.organization | default(omit, true) }}"
+    organization:             "{{ customer_organization | mandatory }}"
     inventory:                "{{ __workflow_launch_item.inventory | default(omit, true) }}"
     limit:                    "{{ __workflow_launch_item.limit | default(omit, true) }}"
     scm_branch:               "{{ __workflow_launch_item.scm_branch | default(omit, true) }}"

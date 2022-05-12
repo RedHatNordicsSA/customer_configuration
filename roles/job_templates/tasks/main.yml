@@ -9,7 +9,7 @@
     execution_environment:                "{{ __controller_template_item.execution_environment.name | default( __controller_template_item.execution_environment | default(omit, true)) }}"
     job_type:                             "{{ __controller_template_item.job_type | default('run') }}"
     inventory:                            "{{ __controller_template_item.inventory.name | default( __controller_template_item.inventory | default(omit, true)) }}"
-    organization:                         "{{ __controller_template_item.organization.name | default( __controller_template_item.organization | default(omit, true)) }}"
+    organization:                         "{{ customer_organization | mandatory }}"
     project:                              "{{ __controller_template_item.project.name | default( __controller_template_item.project | default(omit, true)) }}"
     playbook:                             "{{ __controller_template_item.playbook | default(omit, true) }}"
     credentials:                          "{{ __controller_template_item.credentials | default(__controller_template_item.related.credentials | default([]) | map(attribute='name') | list ) }}"

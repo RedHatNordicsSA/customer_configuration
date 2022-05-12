@@ -4,7 +4,7 @@
   inventory_source_update:
     name:                     "{{ __inventory_source_update_item.name }}"
     inventory:                "{{ __inventory_source_update_item.inventory }}"
-    organization:             "{{ __inventory_source_update_item.organization | default(omit, true) }}"
+    organization:             "{{ customer_organization | mandatory }}"
     wait:                     "{{ __inventory_source_update_item.wait | default(omit) }}"
     interval:                 "{{ __inventory_source_update_item.interval | default(controller_configuration_inventory_source_update_async_delay) }}"
     timeout:                  "{{ __inventory_source_update_item.timeout | default(omit, true) }}"

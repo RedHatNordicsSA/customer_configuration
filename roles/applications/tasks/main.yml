@@ -3,7 +3,7 @@
 - name: Add Controller Applications
   application:
     name:                           "{{ __application_item.name | mandatory }}"
-    organization:                   "{{ __application_item.organization | mandatory }}"
+    organization:                   "{{ customer_organization | mandatory }}"
     description:                    "{{ __application_item.description | default(omit, true) }}"
     authorization_grant_type:       "{{ __application_item.authorization_grant_type | default('password') }}"
     client_type:                    "{{ __application_item.client_type | default('public') }}"

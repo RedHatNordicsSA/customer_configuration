@@ -8,7 +8,7 @@
     description:                        "{{ __workflow_loop_item.description | default(omit, true) }}"
     extra_vars:                         "{{ __workflow_loop_item.extra_vars | default(omit, true) }}"
     allow_simultaneous:                 "{{ __workflow_loop_item.allow_simultaneous | default(omit) }}"
-    organization:                       "{{ __workflow_loop_item.organization.name | default( __workflow_loop_item.organization | default(omit, true)) }}"
+    organization:                       "{{ customer_organization | mandatory }}"
     ask_variables_on_launch:            "{{ __workflow_loop_item.ask_variables_on_launch | default(omit) }}"  # only supported starting from Ansible 2.9
     inventory:                          "{{ __workflow_loop_item.inventory.name | default( __workflow_loop_item.inventory | default(omit, true)) }}"
     limit:                              "{{ __workflow_loop_item.limit | default(omit, true) }}"

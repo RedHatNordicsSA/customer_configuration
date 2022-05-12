@@ -16,7 +16,7 @@
     credentials:                    "{{ __controller_role_item.credentials | default(omit, true) }}"
     organization:                   "{{ __controller_role_item.organization | default(omit, true) }}"
     organizations:                  "{{ __controller_role_item.organizations | default(omit, true) }}"
-    lookup_organization:            "{{ __controller_role_item.lookup_organization | default(omit, true) }}"
+    lookup_organization:            "{{ customer_organization | mandatory }}"
     project:                        "{{ __controller_role_item.project | default(omit, true) }}"
     projects:                       "{{ __controller_role_item.projects | default(omit, true) }}"
     state:                          "{{ __controller_role_item.state | default(controller_state | default('present')) }}"

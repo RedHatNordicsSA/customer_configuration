@@ -3,7 +3,7 @@
   label:
     name:                                 "{{ __controller_label_item.name | mandatory }}"
     new_name:                             "{{ __controller_label_item.new_name | default(omit, true) }}"
-    organization:                         "{{ __controller_label_item.organization | mandatory }}"
+    organization:                         "{{ customer_organization | mandatory }}"
     state:                                "{{ __controller_label_item.state | default(controller_state | default('present')) }}"
 
     # Role Standard Options
