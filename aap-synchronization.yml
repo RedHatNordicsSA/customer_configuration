@@ -52,7 +52,7 @@
 #
     - name: Just ensuring the repo checkout exists
       ansible.builtin.git:
-        repo: "ssh://{{ customer_git_repo }}"
+        repo: "{{ customer_git_repo }}"
         dest: "{{ customer_organization }}/git"
         clone: yes
         accept_hostkey: yes
