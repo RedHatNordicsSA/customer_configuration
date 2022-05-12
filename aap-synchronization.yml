@@ -25,7 +25,7 @@
   pre_tasks:
     - name: Ensure that the customer source directory is cleaned
       ansible.builtin.file:
-        path: "{{ customer_as_code_organization }}"
+        path: "{{ customer_organization }}"
         state: absent
 
 # Uncomment sections below if you need authenticated integration to git
@@ -63,7 +63,7 @@
 
     - name: Include vars from configs directory
       include_vars:
-        dir: "{{ customer_as_code_organization }}/git/controller"
+        dir: "{{ customer_organization }}/git/controller"
         ignore_files: [controller_config.yml.template]
         extensions: ["yml","json"]
       tags:
