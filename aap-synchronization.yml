@@ -95,11 +95,19 @@
         validate_certs: false
       register: local_cluster
 
+    - name: Local cluster install uuid
+      debug:
+        msg: "{{ local_cluster.json.install_uuid }}"
+      
     - name: Fetch cluster install uuid via the load balancer
       uri:
         url: https://{{ load_balancer_fqdn }}/api/v2/ping/
         validate_certs: false
       register: ldb_cluster
+        
+    - name: Load balancer install uuid
+      debug:
+        msg: "{{ ldb_cluster.json.install_uuid }}"
 
     - name: Set schedule mode depending on if we are active cluster or not
       set_fact:
@@ -111,6 +119,7 @@
         name: schedules
       when: controller_schedules is defined
       tags: schedules
+
 
 
 #  tasks:
