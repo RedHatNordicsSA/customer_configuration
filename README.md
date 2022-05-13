@@ -1,7 +1,7 @@
 # customer_configuration
 Part of demonstration of https://github.com/RedHatNordicsSA/controller_configuration
 
-* Contains modified roles from https://github.com/redhat-cop/controller_configuration which only allows customers to create, delete and modify items in their own organization.
+* Contains modified roles from https://github.com/redhat-cop/controller_configuration which only allows customers to create, delete and modify items in their own organization. This is defined by setting a "customer_organization" variable for the customer sync job which = the customers organization in AAP.
 * Additional protection should be to use user which only has access to the customer organization
 
 
