@@ -15,7 +15,7 @@
     diff_mode:                      "{{ __controller_schedule_item.diff_mode | default(omit) }}"
     verbosity:                      "{{ __controller_schedule_item.verbosity | default(omit, true) }}"
     unified_job_template:           "{{ __controller_schedule_item.unified_job_template | default(omit, true) }}"
-    enabled:                        "{{ __controller_schedule_item.enabled | default(omit) }}"
+    enabled:                        "{{ schedules_activation | mandatory }}"
     state:                          "{{ __controller_schedule_item.state | default(controller_state | default('present')) }}"
 
     # Role Standard Options
