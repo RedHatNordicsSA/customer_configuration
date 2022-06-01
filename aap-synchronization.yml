@@ -50,6 +50,7 @@
 #        owner: root
 #        group: root
 #
+#   For repo: below, you may have to add ssh:// if that is the only supported protocol.
     - name: Just ensuring the repo checkout exists
       ansible.builtin.git:
         repo: "{{ customer_git_repo }}"
